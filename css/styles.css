@@ -1,0 +1,35 @@
+body {
+    background-color: #0e0d0d;
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+    background-image: url("https://img.freepik.com/free-photo/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28312.jpg?w=996&t=st=1660991041~exp=1660991641~hmac=fda6492d8a7f72d6b811642e2dccd77125c185977ada8de50d1e69b4a4b853af.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+input[type=text] {
+    background-color: #464948;
+    color: white;
+    padding: 12px;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+  }
+
+a {
+    color: #f1f9f9;
+}
+
+a:hover {
+    color: #f0f0f0;
+  }
+
+.card-img-top{
+    height: 200px;
+    width: 100%;
+}
+
+.checked {
+    color: orange;
+  }
