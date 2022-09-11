@@ -1,0 +1,216 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Recommendation System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="static/css/r-img.png" />
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <!-- As a heading -->
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img src="static/css/r-img.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                <a class="navbar-brand" href="/">Restaurant Recommender</a>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <br><br>
+
+        <!-- <div class="container">
+        <form action="/predict" method="post">
+            <div class="form-group">
+              <h3><b>RESTAURANT NAME</b></h3>
+              <br>
+              <input type="text" id="firstname" name="fname">
+
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+
+        <br> -->
+
+
+        <h3>YOU HAVE SELECTED "{{ restaurant_name }}"</h3>
+        <!-- <h3>{{ prediction_text }}</h3> -->
+        <br>
+        <h3>RECOMMENDED RESTAURANTS BASED ON USERS OF SIMILAR CHOICE</h3>
+
+        <div class="row justify-content-center">
+            <div class="col-sm-3">    
+            <div class="card text-white bg-dark mb-3">
+                <img class="card-img-top" src="static/css/images/1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-header">{{rec_1}}</div>
+                  <p class="card-text" id="wa1"></p>
+                </div>
+              </div>
+            </div> 
+            <div class="col-sm-3">
+                <div class="card text-white bg-dark mb-3">
+                    <img class="card-img-top" src="static/css/images/2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="card-header">{{rec_2}}</div>
+                        <p class="card-text" id="wa2"></p>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-sm-3">
+                    <div class="card text-white bg-dark mb-3">
+                        <img class="card-img-top" src="static/css/images/3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="card-header">{{rec_3}}</div>
+                            <p class="card-text" id="wa3"></p>
+                        </div>
+                      </div>
+                    </div> 
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+              <div class="col-sm-3">
+                <div class="card text-white bg-dark mb-3">
+                    <img class="card-img-top" src="static/css/images/4.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="card-header">{{rec_4}}</div>
+                        <p class="card-text" id="wa4"></p>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-sm-3">
+                    <div class="card text-white bg-dark mb-3">
+                        <img class="card-img-top" src="static/css/images/5.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="card-header">{{rec_5}}</div>
+                            <p class="card-text" id="wa5"></p>
+                        </div>
+                      </div>
+                    </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <h3>SIMILAR RECOMMENDED RESTAURANT BASED ON IT'S TYPE</h3>
+        <!-- <h3>{{ content_based }}</h3> -->
+
+        <div class="row justify-content-center">
+            <div class="col-sm-3" >    
+            <div class="card text-white bg-dark mb-3">
+                <img class="card-img-top" src="static/css/images/6.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-header">{{rec_6}}</div>
+                    <p class="card-text" id="wa6"></p>
+                </div>
+              </div>
+            </div> 
+            <div class="col-sm-3">
+                <div class="card text-white bg-dark mb-3">
+                    <img class="card-img-top" src="static/css/images/7.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="card-header">{{rec_7}}</div>
+                        <p class="card-text" id="wa7"></p>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-sm-3">
+                    <div class="card text-white bg-dark mb-3">
+                        <img class="card-img-top" src="static/css/images/8.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="card-header">{{rec_8}}</div>
+                            <p class="card-text" id="wa8"></p>
+                        </div>
+                      </div>
+                    </div> 
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+              <div class="col-sm-3">
+                <div class="card text-white bg-dark mb-3">
+                    <img class="card-img-top" src="static/css/images/9.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="card-header">{{rec_9}}</div>
+                        <p class="card-text" id="wa9"></p>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-sm-3">
+                    <div class="card text-white bg-dark mb-3">
+                        <img class="card-img-top" src="static/css/images/10.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="card-header">{{rec_10}}</div>
+                            <p class="card-text" id="wa10"></p>
+                        </div>
+                      </div>
+                    </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <br>
+        <br>
+        <p>© Made by Adithya</p>
+
+    </div>
+
+
+    <!-- ------------------------------------------------------------------------------------- -->
+
+    <script>
+        str1={{wa_1}}
+        str2={{wa_2}}
+        str3={{wa_3}}
+        str4={{wa_4}}
+        str5={{wa_5}}
+         //document.getElementById("demo").innerHTML = str1.toFixed(0);
+        for(i=1;i<str1;i++){document.getElementById('wa1').innerHTML += "<span class='fa fa-star checked'></span>";}
+        for(i=1;i<str2;i++){document.getElementById('wa2').innerHTML += "<span class='fa fa-star checked'></span>";}
+        for(i=1;i<str3;i++){document.getElementById('wa3').innerHTML += "<span class='fa fa-star checked'></span>";}
+        for(i=1;i<str4;i++){document.getElementById('wa4').innerHTML += "<span class='fa fa-star checked'></span>";}
+        for(i=1;i<str5;i++){document.getElementById('wa5').innerHTML += "<span class='fa fa-star checked'></span>";}
+ 
+        str6={{wa_6}}
+        str7={{wa_7}}
+        str8={{wa_8}}
+        str9={{wa_9}}
+        str10={{wa_10}}
+
+        for(i=1;i<str6;i++){document.getElementById('wa6').innerHTML += "<span class='fa fa-star checked'></span>";}
+        for(i=1;i<str7;i++){document.getElementById('wa7').innerHTML += "<span class='fa fa-star checked'></span>";}
+        for(i=1;i<str8;i++){document.getElementById('wa8').innerHTML += "<span class='fa fa-star checked'></span>";}
+        for(i=1;i<str9;i++){document.getElementById('wa9').innerHTML += "<span class='fa fa-star checked'></span>";}
+        for(i=1;i<str10;i++){document.getElementById('wa10').innerHTML += "<span class='fa fa-star checked'></span>";}
+        
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+
+        <!-- JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
